@@ -1,34 +1,132 @@
-# E-commerce Data Analysis with Python & SQL
+# E-commerce Data Analysis System
 
-Advanced data analysis of Brazilian e-commerce operations using SQL queries and Python visualizations.
+A comprehensive data analysis system for e-commerce operations, featuring MySQL database integration, data import automation, and advanced analytics queries.
 
-## Tech Stack
-- Python 3.x
-- MySQL
-- Libraries: Pandas, Matplotlib, Seaborn, mysql-connector-python
+## Overview
+
+This project provides a robust system for analyzing e-commerce data, including customer behavior, sales patterns, and business metrics. It features automated data import from CSV files to MySQL and a collection of SQL queries ranging from basic to advanced analytics.
 
 ## Features
 
-### Data Analysis Pipeline
-- Automated CSV to MySQL database ingestion 
-- Dynamic table creation with data type handling
-- Null value handling and data cleaning
-- Batch processing of CSV files
+- Automated CSV to MySQL data import
+- Data type detection and mapping
+- Null value handling
+- Comprehensive analytics queries:
+  - Customer demographics analysis
+  - Sales performance metrics
+  - Revenue analysis
+  - Customer retention calculations
+  - Product category insights
 
-### Business Intelligence
-- Geographic customer distribution analysis
-- Sales trends and YoY growth metrics
-- Product category performance metrics
-- Customer retention rates
+## Prerequisites
 
-### Visualization
-- Interactive sales trend charts
+- Python 3.x
+- MySQL Server
+- Required Python packages:
+  ```
+  pandas
+  mysql-connector-python
+  matplotlib
+  seaborn
+  ```
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [your-repository-url]
+   ```
+
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Configure MySQL connection in `config.py`:
+   ```python
+   DB_CONFIG = {
+       'host': 'your_host',
+       'user': 'your_username',
+       'password': 'your_password',
+       'database': 'your_database'
+   }
+   ```
+
+## Data Import
+
+The system handles the following CSV files:
+- customers.csv
+- orders.csv
+- sales.csv
+- products.csv
+- delivery.csv
+- payments.csv
+
+To import data:
+```python
+python import_data.py
+```
+
+## Analytics Capabilities
+
+### Basic Analytics
+- Customer location distribution
+- Order counts and trends
+- Category-wise sales analysis
+- Payment method analysis
+- State-wise customer distribution
+
+### Intermediate Analytics
+- Monthly order patterns
+- Products per order metrics
+- Revenue distribution by category
+- Price-purchase correlation
+- Seller performance rankings
+
+### Advanced Analytics
+- Moving averages of order values
+- Cumulative sales tracking
+- Year-over-year growth
+- Customer retention analysis
+- Top customer identification
+
+## Usage Examples
+
+```python
+# Example: Get total sales per category
+query = """
+SELECT 
+    UPPER(products.product_category) category,
+    ROUND(SUM(payments.payment_value), 2) sales
+FROM products 
+JOIN order_items ON products.product_id = order_items.product_id
+JOIN payments ON payments.order_id = order_items.order_id
+GROUP BY category
+"""
+```
+
+## Data Visualization
+
+The project includes visualization capabilities using matplotlib and seaborn for:
 - Customer distribution maps
-- Product performance analysis
-- Payment pattern visualization
+- Sales trends
+- Category performance
+- Monthly order patterns
+- Revenue analysis
 
-## Setup
+## Contributing
 
-```bash
-git clone https://github.com/SAMUR274/PYTHON-SQL-DataAnalysis_Project.git
-pip install pandas matplotlib seaborn mysql-connector-python
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+## Contact
+
+Your Name - [Samiur Rahman Samiur521@gmail.com
+]
