@@ -1,0 +1,100 @@
+```markdown
+# E-commerce Data Analysis Project
+
+An end-to-end data analysis project investigating customer behavior, sales trends, and business metrics using Python, SQL and data visualization.
+
+## Overview
+
+This project analyzes a Brazilian e-commerce dataset to extract actionable business insights through SQL queries ranging from basic metrics to advanced customer behavior analysis.
+
+## Features
+
+- Customer geographic distribution analysis
+- Sales trend analysis with YoY growth
+- Product category performance evaluation 
+- Customer segmentation and retention metrics
+- Interactive visualizations using Matplotlib and Seaborn
+
+## Tech Stack
+
+- Python
+- MySQL
+- Pandas
+- Matplotlib
+- Seaborn
+- MySQL Connector
+
+## Key Analyses
+
+1. Basic Metrics
+- Customer distribution across cities
+- Order volumes and trends
+- Category-wise sales performance
+- Payment pattern analysis
+
+2. Business Insights
+- Monthly order patterns
+- Product category revenue contribution
+- Price-purchase correlation analysis  
+- Seller performance rankings
+
+3. Advanced Analytics
+- Moving average calculations for order values
+- Cumulative sales trends
+- Year-over-Year growth analysis
+- Customer retention rates
+- Top customer identification
+
+## Setup
+
+1. Clone the repository
+```bash
+git clone [repository-url]
+```
+
+2. Install dependencies
+```bash
+pip install pandas matplotlib seaborn mysql-connector-python
+```
+
+3. Configure MySQL connection in the script:
+```python
+db = mysql.connector.connect(
+    host="localhost",
+    username="your_username",
+    password="your_password",
+    database="ecommerce"
+)
+```
+
+4. Run the data import script:
+```python
+python data_import.py
+```
+
+## Project Structure
+
+```
+├── data/
+│   ├── customers.csv
+│   ├── orders.csv
+│   ├── products.csv
+│   ├── payments.csv
+│   └── delivery.csv
+├── scripts/
+│   ├── data_import.py
+│   └── analysis_queries.py
+├── README.md
+```
+
+## Sample Insights
+
+- 99.99% of orders were paid in installments
+- Strong seasonal patterns in monthly order volumes
+- -0.106 correlation between product price and purchase frequency
+- Significant YoY growth of 20% in 2018
+
+
+
+
+```
